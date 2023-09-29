@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anix Rose - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Include Font Awesome for icons -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8c291; /* New background color */
+        }
+
+        #app {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: #6b5b95; /* New header background color */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        nav {
+            background-color: #feb236; /* New navigation background color */
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        /* Add new styles for icons */
+        nav ul li a i {
+            margin-right: 5px;
+        }
+
+        section {
+            background-color: #ffffff; /* New section background color */
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #2a9d8f; /* New footer background color */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Anix Rose</h1>
+            <p>Web Developer</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><router-link to="/about"><i class="fas fa-user"></i> About</router-link></li> <!-- Use router-link for navigation -->
+                <li><router-link to="/portfolio"><i class="fas fa-folder-open"></i> Portfolio</router-link></li>
+                <li><router-link to="/skills"><i class="fas fa-code"></i> Skills</router-link></li>
+                <li><router-link to="/contact"><i class="fas fa-envelope"></i> Contact</router-link></li>
+            </ul>
+        </nav>
+
+        <router-view></router-view>
+
+        <footer>
+            <p>&copy; 2023 Anix Rose</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-router@3.5.3/dist/vue-router.js"></script>
+
+    <script>
+        const About = {
+            template: `
+                <section>
+                    <h2>About Myself</h2>
+                    <div>
+                        <img src="anix.png" alt="Anix Rose">
+                        <p>I'm Anix, a passionate and driven IT student at Deakin University, currently in my second semester pursuing a Bachelor of Science in Information Technology. My primary aspiration lies in the realm of web development, where I aim to craft visually stunning and user-centric websites. With a solid foundation in front-end development, I'm constantly honing my skills to create seamless and aesthetically pleasing online experiences. What truly sets me apart is my keen eye for design, which allows me to merge technical expertise with artistic flair, ensuring that the websites I create not only function flawlessly but also captivate users with their visual appeal. As I progress in my academic journey, I'm excited to further refine my abilities and contribute meaningfully to the world of web development.</p>
+                    </div>
+                </section>
+            `
+        };
+
+        const Portfolio = {
+            template: `
+                <section>
+                    <h2>Portfolio</h2>
+                    <div>
+                        <div>
+                            <h3>Project 1: Task 1.1P - Creating an HTML Page with CSS Styling and GitHub Integration</h3>
+                            <p>"In Task 1.1P, I embarked on the journey of crafting a visually appealing and functionally efficient website for Alfahm store. My approach revolved around thoughtful design principles, creating an aesthetic that resonates with Alfahm's unique essence. I ensured the website's responsiveness across a myriad of devices, making certain that users could access it seamlessly whether they were on a desktop, tablet, or smartphone. To enhance engagement, I carefully curated and presented captivating content that showcased Alfahm's products and values effectively. Furthermore, I integrated SEO optimization techniques to boost the website's visibility on search engines, ultimately attracting more potential customers. The integration with GitHub streamlined the development process, facilitating collaboration and version control, making this project a holistic example of web development."</p>
+                        </div>
+                        <div>
+                            <h3>Project 2: Task 1.2P - Exploring Responsive Web Design and JavaScript Concepts</h3>
+                            <p>"Task 1.2P marked an exciting phase in my web development journey, where I delved into the intricate world of responsive web design and harnessed the power of JavaScript to elevate website functionality. Responsive web design was a pivotal aspect, ensuring that Alfahm's website adapted seamlessly to the diverse array of devices used by modern consumers. This not only enhanced the user experience but also positioned the website favorably in search engine rankings. Meanwhile, my exploration of JavaScript showcased its versatility in handling various data types, which was crucial for implementing dynamic features and interactivity on the website. This project underscored the dynamic nature of web development, bridging the gap between design aesthetics and technical prowess to create compelling online experiences that captivate and engage users effectively."</p>
+                        </div>
+                    </div>
+                </section>
+            `
+        };
+
+        const Skills = {
+            template: `
+                <section>
+                    <h2>Skills</h2>
+                    <div>
+                        <ul>
+                            <li>Web Development</li>
+                            <li>Graphic Design</li>
+                            <li>HTML, CSS, JavaScript</li>
+                            <li>Responsive Design</li>
+                            <li>UI/UX Design</li>
+                        </ul>
+                    </div>
+                </section>
+            `
+        };
+
+        const Contact = {
+            template: `
+                <section>
+                    <h2>Contact Me</h2>
+                    <div>
+                        <p>I'm available for freelance and collaborative projects. Feel free to reach out!</p>
+                        <input type="text" v-model="userInput" placeholder="Your Message">
+                        
+                        <p v-if="userInput !== ''">You typed: {{ userInput }}</p>
+                        <p v-else>No message entered.</p>
+                        
+                        <button v-if="userInput !== ''" @click="submitMessage">Submit</button>
+                        <p v-if="messageSent">Message sent successfully!</p>
+                        
+                        <ul>
+                            <li>Email: <a href="mailto:anixrose2808@gmail.com">anixrose2808@gmail.com</a></li>
+                            <li>Phone Number: <a href="tel:0466904304">+1 0466904304</a></li>
+                            <li>GitHub: <a href="https://github.com/anixrose" target="_blank">https://github.com/anixrose</a></li>
+                        </ul>
+                    </div>
+                </section>
+            `,
+            data() {
+                return {
+                    userInput: '',
+                    messageSent: false
+                };
+            },
+            methods: {
+                submitMessage() {
+                    setTimeout(() => {
+                        this.messageSent = true;
+                    }, 1000);
+                }
+            }
+        };
+
+        const routes = [
+            { path: '/about', component: About },
+            { path: '/portfolio', component: Portfolio },
+            { path: '/skills', component: Skills },
+            { path: '/contact', component: Contact }
+        ];
+
+        const router = new VueRouter({
+            routes
+        });
+
+        const app = new Vue({
+            el: '#app',
+            router
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
